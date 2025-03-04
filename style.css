@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a6c1ee, #fbc2eb, #84fab0);
+    background-size: 400% 400%; /* Increase size for smooth transition */
+    animation: backgroundAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background-position: 100% 0%; /* Start from top-right corner */
+    }
+    50% {
+      background-position: 0% 100%; /* Move to bottom-left corner */
+    }
+    100% {
+      background-position: 100% 0%; /* Return to top-right corner */
+    }
+  }
+  
+  .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .save-button {
+    margin-top: 1rem;
+    background-color: #28a745;
+  }
+  
+  .save-button:hover {
+    background-color: #218838;
+  }
+  
+  .joke-container {
+    margin-top: 1.5rem;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .joke-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .joke-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  #jokeText {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* 3D Glowing Spinner with Color-Changing Effects */
+  .spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    animation: spin 1.5s linear infinite, glow 2s ease-in-out infinite, colorChange 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff5733, 0 0 40px #ff5733, 0 0 60px #ff5733;
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      border-top-color: #007bff;
+      border-right-color: #ff5733;
+      border-bottom-color: #33ff57;
+      border-left-color: #ff33a1;
+    }
+    25% {
+      border-top-color: #ff33a1;
+      border-right-color: #007bff;
+      border-bottom-color: #ff5733;
+      border-left-color: #33ff57;
+    }
+    50% {
+      border-top-color: #33ff57;
+      border-right-color: #ff33a1;
+      border-bottom-color: #007bff;
+      border-left-color: #ff5733;
+    }
+    75% {
+      border-top-color: #ff5733;
+      border-right-color: #33ff57;
+      border-bottom-color: #ff33a1;
+      border-left-color: #007bff;
+    }
+    100% {
+      border-top-color: #007bff;
+      border-right-color: #ff5733;
+      border-bottom-color: #33ff57;
+      border-left-color: #ff33a1;
+    }
+  }
+  
+  /* Confetti Canvas */
+  #confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+  }
