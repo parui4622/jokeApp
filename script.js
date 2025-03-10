@@ -1,4 +1,3 @@
-// Step 1: Find the elements
 let jokeButton = document.querySelector("#jokeButton");
 let jokeText = document.querySelector("#jokeText");
 let loadingSpinner = document.querySelector("#loadingSpinner");
