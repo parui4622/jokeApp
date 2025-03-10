@@ -6,7 +6,6 @@ let jokeCard = document.querySelector("#jokeCard");
 let saveJokeButton = document.querySelector("#saveJokeButton");
 let jokeSound = document.querySelector("#jokeSound");
 
-// Step 2: Add a click event listener to the button
 jokeButton.addEventListener("click", async function () {
   try {
     // Clear the joke text and show the spinner
@@ -28,7 +27,7 @@ jokeButton.addEventListener("click", async function () {
       jokeCard.classList.add("visible"); // Show the joke card
     //   jokeSound.play(); // Play a sound effect
 
-    //   // Trigger confetti animation
+    //   Trigger confetti animation
     //   confetti({
     //     particleCount: 100,
     //     spread: 70,
@@ -72,7 +71,7 @@ async function fetchJoke(apiUrl) {
   }
 }
 
-// Step 3: Save Joke Feature
+// Saves Joke Feature
 saveJokeButton.addEventListener("click", function () {
   let savedJoke = jokeText.textContent;
   if (savedJoke) {
